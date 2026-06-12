@@ -5,4 +5,4 @@ __pycache__/
 *.pyc
 *.pyo
 .DS_Store
-src/executed/
+corpus/src/executed/

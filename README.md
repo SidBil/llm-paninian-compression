@@ -20,20 +20,22 @@ The core claim: a neural network trained purely on next-character prediction ove
 
 ```
 llm-paninian-compression/
-├── sanskrit_lm_feasibility.ipynb   # Feasibility model: 4L×4H×256D, ~3M params (Colab)
-├── sanskrit_lm_v1.ipynb            # V1 model: 6L×8H×512D, ~19M params (Colab)
-├── sanskrit_probe_v1.ipynb         # Probing dataset builder: DCS → activations (Colab)
-└── sanskrit_corpus/
-    ├── requirements.txt
-    └── src/
-        ├── 01_acquire.ipynb        # Download GRETIL + DCS sources
-        ├── 02_extract.ipynb        # Extract lines; pre-transliteration noise stripping
-        ├── 03_normalize.ipynb      # IAST→SLP1; whitelist cleaning
-        ├── 04_deduplicate.ipynb    # Deduplication
-        └── 05_report.ipynb         # Corpus stats + validation
+├── corpus/
+│   ├── requirements.txt
+│   └── src/
+│       ├── 01_acquire.ipynb        # Download GRETIL + DCS sources
+│       ├── 02_extract.ipynb        # Extract lines; pre-transliteration noise stripping
+│       ├── 03_normalize.ipynb      # IAST→SLP1; whitelist cleaning
+│       ├── 04_deduplicate.ipynb    # Deduplication
+│       └── 05_report.ipynb         # Corpus stats + validation
+├── training/
+│   ├── sanskrit_lm_feasibility.ipynb   # Feasibility model: 4L×4H×256D, ~3M params (Colab)
+│   └── sanskrit_lm_v1.ipynb            # V1 model: 6L×8H×512D, ~19M params (Colab)
+└── probing/
+    └── sanskrit_probe_v1.ipynb         # Probing dataset builder: DCS → activations (Colab)
 ```
 
-Data (`sanskrit_corpus/data/`) is excluded from version control — see corpus pipeline setup below.
+Data (`corpus/data/`) is excluded from version control — see corpus pipeline setup below.
 
 ---
 
@@ -78,7 +80,7 @@ The pipeline runs locally. Data is not committed to the repo (GRETIL + DCS raw f
 ### Setup
 
 ```bash
-cd sanskrit_corpus
+cd corpus
 source venv/bin/activate
 ```
 
