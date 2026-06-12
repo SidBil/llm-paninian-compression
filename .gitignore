@@ -1,0 +1,8 @@
+venv/
+sanskrit_corpus/data/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+*.pyo
+.DS_Store
+src/executed/
